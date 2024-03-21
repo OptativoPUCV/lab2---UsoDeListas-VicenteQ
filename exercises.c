@@ -116,31 +116,26 @@ La función verifica si la cadena de entrada tiene sus
 paraéntesis balanceados. Retorna 1 si están balanceados,
 0 en caso contrario.
 */
-
 int parentesisBalanceados(char *cadena) {
-    Stack* P = create_stack();
-    for(int i = 0; cadena[i] != '\0'; i++) {
-        char elemento = cadena[i];
-        if (elemento == '(' || elemento == '[' || elemento == '{') {
-            push(P, &elemento);
-        } else if (elemento == ')' || elemento == ']' || elemento == '}') {
-            if (top(P) != NULL) {
-                char *top_element = (char *)top(P);
-                if ((elemento == ')' && *top_element == '(') ||
-                    (elemento == ']' && *top_element == '[') ||
-                    (elemento == '}' && *top_element == '{')) {
-                    pop(P);
-                } else {
-                    return 0;
-                }
-            } else {
-                return 0;
-            }
+  Stack* P = create_stack();
+  for(int i = 0; cadena[i] != '\0' ; i++){
+    char elemento = cadena[i];
+    if(elemento == '(' || elemento == '[' || elemento == '}'){
+      push(P, &elemento);
+    }else{
+      if(top(P) != NULL){
+        if(elemento == ')'){
+          pop(P);
         }
+      }
+      else{
+        return 0;
+      }
     }
-    if (top(P) == NULL) {
-        return 1; 
-    }
-    return 0; 
+  }
+  if(top(P) == NULL){
+    return 1;
+  }
+  return 0;
 }
 

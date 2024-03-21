@@ -127,3 +127,16 @@ Thu 21 Mar 2024 03:07:37 AM UTC:
  tests:  3|2
 total_score: 40/70
 cefad2c
+Thu 21 Mar 2024 03:09:31 AM UTC: 
+ exercises.c | 1 +
+ 1 file changed, 1 insertion(+)
+In file included from test.c:5:
+exercises.c: In function ‘copia_pila’:
+exercises.c:107:18: error: expected ‘;’ before ‘pop’
+  107 |     push(P1,dato)
+      |                  ^
+      |                  ;
+  108 |     pop(Paux);
+      |     ~~~           
+Compilation failed
+ee53195

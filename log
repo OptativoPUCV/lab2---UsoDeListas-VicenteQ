@@ -53,3 +53,14 @@ exercises.c:80:30: error: invalid use of incomplete typedef ‘List’
       |                              ^~
 Compilation failed
 f6de08f
+Thu 21 Mar 2024 02:35:54 AM UTC: 
+ exercises.c | 9 ++++-----
+ 1 file changed, 4 insertions(+), 5 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘eliminaElementos’:
+exercises.c:80:18: error: comparison between pointer and integer [-Werror]
+   80 |   while(elemento != NULL){
+      |                  ^~
+cc1: all warnings being treated as errors
+Compilation failed
+89222cf

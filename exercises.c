@@ -121,11 +121,11 @@ int parentesisBalanceados(char *cadena) {
   Stack* P = create_stack();
   for(int i = 0; cadena[i] != '\0' ; i++){
     char elemento = cadena[i];
-    if(elemento == '('){
+    if(elemento == '(' || elemento == '[' || elemento == '}'){
       push(P, &elemento);
     }else{
       if(top(P) != NULL){
-        if(elemento == ')'){
+        if(elemento == ')' || elemento == ']' || elemento == '}'){
           pop(P);
         }
       }

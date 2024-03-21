@@ -64,3 +64,14 @@ exercises.c:80:18: error: comparison between pointer and integer [-Werror]
 cc1: all warnings being treated as errors
 Compilation failed
 89222cf
+Thu 21 Mar 2024 02:37:28 AM UTC: 
+ exercises.c | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+In file included from test.c:5:
+exercises.c: In function ‘eliminaElementos’:
+exercises.c:79:19: error: initialization of ‘int *’ from ‘int’ makes pointer from integer without a cast [-Werror=int-conversion]
+   79 |   int* elemento = *(int*)first(L);
+      |                   ^
+cc1: all warnings being treated as errors
+Compilation failed
+b0d4a18

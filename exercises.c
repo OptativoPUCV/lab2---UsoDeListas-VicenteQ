@@ -76,7 +76,14 @@ posiciona en el elemento anterior.
 */
 
 void eliminaElementos(List*L, int elem){
-  printf("hola");
+  for (int i = 0; i < L->size;) {
+      int* elemento = (int*)L->data[i];
+      if (*elemento == elem) {
+          popCurrent(L);
+      } else {
+          i++;
+      }
+  }
 }
 
 /*

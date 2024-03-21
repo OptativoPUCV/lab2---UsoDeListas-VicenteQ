@@ -40,3 +40,16 @@ Thu 21 Mar 2024 02:31:49 AM UTC:
  tests:  2|3
 total_score: 20/70
 ea7feaa
+Thu 21 Mar 2024 02:33:12 AM UTC: 
+ exercises.c | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘eliminaElementos’:
+exercises.c:79:24: error: invalid use of incomplete typedef ‘List’
+   79 |   for (int i = 0; i < L->size;) {
+      |                        ^~
+exercises.c:80:30: error: invalid use of incomplete typedef ‘List’
+   80 |       int* elemento = (int*)L->data[i];
+      |                              ^~
+Compilation failed
+f6de08f

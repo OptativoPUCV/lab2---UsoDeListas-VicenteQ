@@ -1,0 +1,19 @@
+Thu 21 Mar 2024 01:52:19 AM UTC: 
+ exercises.c | 5 +++++
+ 1 file changed, 5 insertions(+)
+ tests:  1|4
+total_score: 10/70
+4d3726e
+Thu 21 Mar 2024 01:55:46 AM UTC: 
+ exercises.c | 6 +++++-
+ 1 file changed, 5 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘sumaLista’:
+exercises.c:61:23: error: invalid use of incomplete typedef ‘List’
+   61 |   for(int i = 0; i < L->size; i++){
+      |                       ^~
+exercises.c:62:22: error: invalid use of incomplete typedef ‘List’
+   62 |     suma += *((int*)L->data[i]);
+      |                      ^~
+Compilation failed
+4d3726e

@@ -23,3 +23,14 @@ Thu 21 Mar 2024 02:04:00 AM UTC:
  tests:  2|3
 total_score: 20/70
 7b6569d
+Thu 21 Mar 2024 02:31:37 AM UTC: 
+ exercises.c | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+exercises.c: In function ‘eliminaElementos’:
+exercises.c:79:8: error: unused variable ‘elemento’ [-Werror=unused-variable]
+   79 |   int *elemento = (int*)first(L);
+      |        ^~~~~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+311ea74

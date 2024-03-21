@@ -117,7 +117,8 @@ paraéntesis balanceados. Retorna 1 si están balanceados,
 0 en caso contrario.
 */
 int sonPareja(char c1, char c2){
-  return (c1 == '(' && c2 == ')') || (c1 == '[' && c2 == ']');
+  return (c1 == '(' && c2 == ')') || (c1 == '[' && c2 == ']') || (c1 == '{' && c2 == '}');
+
 }
 
 int parentesisBalanceados(char *cadena) {

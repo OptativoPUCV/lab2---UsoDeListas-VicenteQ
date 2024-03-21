@@ -116,26 +116,36 @@ La función verifica si la cadena de entrada tiene sus
 paraéntesis balanceados. Retorna 1 si están balanceados,
 0 en caso contrario.
 */
+int sonPareja(char c1, char c2){
+  return (c1 == '(' && c2 == ')') || (c1 == '[' && c2 == ']');
+}
+
 int parentesisBalanceados(char *cadena) {
   Stack* P = create_stack();
-  for(int i = 0; cadena[i] != '\0' ; i++){
-    char elemento = cadena[i];
-    if(elemento == '(' || elemento == '[' || elemento == '}'){
-      push(P, &elemento);
-    }else{
-      if(top(P) != NULL){
-        if(elemento == ')'){
-          pop(P);
+  char *elemento = cadena;
+  while(*elemento){
+    if (*elemento == '(' || *elemento == '[' || *elemento == '{'){
+      char *dato = (char*)malloc(sizeof(char));
+      *dato = *elemento;
+      push(P,dato);
+    }else if (*elemento == ')' || *elemento == ']' || *elemento == '}'){
+      if (top(P) == 0 || !sonPareja(*(char*)top(P), *elemento)){
+        while (top(P) != 0) {
+          free(pop(P));
         }
-      }
-      else{
+        free(P);
         return 0;
+      }else {
+        free(pop(P));
       }
     }
+    elemento++;
   }
-  if(top(P) == NULL){
-    return 1;
+  int resultado = (top(P) == 0);
+  while(top(P) != 0){
+    free(pop(P));
   }
-  return 0;
+  free(P);
+  return resultado;
 }
 
